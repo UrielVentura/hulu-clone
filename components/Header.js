@@ -8,16 +8,23 @@ import {
   RectangleStackIcon,
   UserIcon,
 } from '@heroicons/react/24/outline';
+
+const headerItems = [
+  { title: 'HOME', icon: HomeIcon },
+  { title: 'TRENDING', icon: BoltIcon },
+  { title: 'VERIFIED', icon: CheckBadgeIcon },
+  { title: 'COLLECTIONS', icon: RectangleStackIcon },
+  { title: 'SEARCH', icon: MagnifyingGlassIcon },
+  { title: 'ACCOUNT', icon: UserIcon },
+];
+
 export const Header = () => {
   return (
     <header className='flex flex-col sm:flex-row m-5 justify-between items-center h-auto'>
       <div className='flex flex-grow justify-evenly max-w-2xl'>
-        <HeaderItem title='HOME' Icon={HomeIcon} />
-        <HeaderItem title='TRENDING' Icon={BoltIcon} />
-        <HeaderItem title='VERIFIED' Icon={CheckBadgeIcon} />
-        <HeaderItem title='COLLECTIONS' Icon={RectangleStackIcon} />
-        <HeaderItem title='SEARCH' Icon={MagnifyingGlassIcon} />
-        <HeaderItem title='ACCOUNT' Icon={UserIcon} />
+        {headerItems.map((item) => {
+          return <HeaderItem title={item.title} Icon={item.icon} />;
+        })}
       </div>
       <Image
         className='object-contain'
