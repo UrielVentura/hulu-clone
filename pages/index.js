@@ -1,3 +1,15 @@
+import Head from 'next/head';
+import { Header } from '../components';
+
 export default function HomePage() {
-  return <h1 className="text-3xl font-bold underlined">Hello World!</h1>;
+  return (
+    <>
+      <Head>
+        <title>Hulu - Clone</title>
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+
+      <Header />
+    </>
+  );
 }
