@@ -22,14 +22,14 @@ export const Header = () => {
   return (
     <header className='flex flex-col sm:flex-row m-5 justify-between items-center h-auto'>
       <div className='flex flex-grow justify-evenly max-w-2xl'>
-        {headerItems.map((item) => {
-          return <HeaderItem title={item.title} Icon={item.icon} />;
+        {headerItems.map((item, index) => {
+          return <HeaderItem key={index} title={item.title} Icon={item.icon} />;
         })}
       </div>
       <Image
         className='object-contain'
         src='/../public/hulu-logo.png'
-        width={180}
+        width={140}
         height={80}
       />
     </header>
